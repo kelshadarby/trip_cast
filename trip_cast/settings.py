@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware'
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -123,8 +123,8 @@ STATIC_URL = 'static/'
 # CORS
 CORS_ALLOW_ALL_ORIGINS = True  # tighten this down later in production
 
-# Google API Key
-GOOGLE_API_KEY = 'your_google_api_key_here'
+# Google API Keys
+GOOGLE_API_KEY = 'AIzaSyApqp-vhe3LETYwHu2be_l172SqlXoPwJc'
 
 # REST Framework
 REST_FRAMEWORK = {
