@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import Trip, Waypoint
+from .models import Trip
 from .serializers import TripSerializer
 from .services import get_route
 
@@ -28,7 +28,6 @@ def create_trip(request):
 
     route = route_data['routes'][0]
 
-    # save trip to database
     trip = Trip.objects.create(
         origin=origin,
         destination=destination,

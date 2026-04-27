@@ -21,6 +21,4 @@ def get_route(origin, destination):
     }
 
     response = requests.post(url, json=body, headers=headers)
-    print("STATUS CODE:", response.status_code)
-    print("GOOGLE RESPONSE:", response.json())
     return response.json()

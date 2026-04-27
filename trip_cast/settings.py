@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'route_planner',
+    'rest_stop_planner',
 ]
 
 MIDDLEWARE = [

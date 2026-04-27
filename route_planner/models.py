@@ -12,12 +12,3 @@ class Trip(models.Model):
     def __str__(self):
         return f"{self.origin} to {self.destination}"
     
-
-class Waypoint(models.Model):
-    trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='waypoints')
-    lat = models.FloatField()
-    lng = models.FloatField()
-    order = models.IntegerField()
-
-    def __str__(self):
-        return f"Waypoint {self.order} for {self.trip}"

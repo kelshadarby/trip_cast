@@ -1,16 +1,8 @@
 from rest_framework import serializers
-from .models import Trip, Waypoint
-
-
-class WaypointSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Waypoint
-        fields = '__all__'
+from .models import Trip
 
 
 class TripSerializer(serializers.ModelSerializer):
-    waypoints = WaypointSerializer(many=True, read_only=True)
-
     class Meta:
         model = Trip
         fields = '__all__'
