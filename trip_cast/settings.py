@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'route_planner',
     'rest_stop_planner',
+    'coordinates',
 ]
 
 MIDDLEWARE = [

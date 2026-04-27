@@ -42,6 +42,7 @@ def add_rest_stop(request, trip_id):
         )
 
     data = {
+        "trip": trip.id,
         'google_place_id': request.data.get('google_place_id'),
         'name': request.data.get('name'),
         'location_type': request.data.get('location_type'),
@@ -51,7 +52,7 @@ def add_rest_stop(request, trip_id):
     serializer = RestStopSerializer(data=data)
 
     if serializer.is_valid():
-        serializer.save(trip=trip)
+        serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
