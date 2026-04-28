@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'route_planner',
+    'route',
     'rest_stop_planner',
-    'coordinates',
+    'waypoint'
 ]
 
 MIDDLEWARE = [
