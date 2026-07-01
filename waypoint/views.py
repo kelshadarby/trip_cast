@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import WaypointSerializer, WaypointResultSerializer
 from .services import find_waypoints
+from .models import Waypoint
 
 @api_view(['POST'])
 def get_waypoint_results(request):
@@ -51,3 +52,13 @@ def create_waypoint(request):
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+def delete_waypoint(waypoint_id):
+    try:
+        waypoint = Waypoint.objects.get(id=waypoint_id)
+    except Waypoint.DoesNotExist:
+        return Response(
+            {'error': 'Waypoint not found'},
+            status=status.HTTP_404_NOT_FOUND
+        )
+    waypoint.delete()

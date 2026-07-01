@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'route',
-    'rest_stop_planner',
-    'waypoint'
+    'waypoint',
 ]
 
 MIDDLEWARE = [
